@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  width: number = 250;
+  height: number = 250;
+
+  ngOnInit() {
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
+  }
+
+  onResize(event) {
+    this.width = event.target.innerWidth;
+    this.height = event.target.innerHeight;
+  }
 }

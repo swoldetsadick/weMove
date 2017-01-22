@@ -1,0 +1,8 @@
+.full{
+  position: fixed;
+  background-color: gray;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  z-index: 1;
+  display: block;
+}
