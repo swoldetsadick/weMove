@@ -4,17 +4,32 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { NewsComponent } from './news/news.component';
+import { TrafficComponent } from './traffic/traffic.component';
+import { TransitComponent } from './transit/transit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+      AppComponent,
+      MeteoComponent,
+      NewsComponent,
+      TrafficComponent,
+      TransitComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+  ],
+  bootstrap: [
+      AppComponent,
+      MeteoComponent,
+      NewsComponent,
+      TrafficComponent,
+      TransitComponent
+  ]
 })
 export class AppModule { }
