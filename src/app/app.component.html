@@ -1,6 +1,14 @@
-<div class="full" (window:resize)="onResize($event)" [style.width.px]="width" [style.height.px]="height">
-  <meteo></meteo>
-  <news></news>
-  <traffic></traffic>
-  <transit></transit>  
-</div> 
+<div class="full" (window:resize)="onResize($event)">
+  <div class="transit">
+    <transit></transit>
+  </div>
+  <div class="meteo">
+    <meteo></meteo>
+  </div>
+  <div class="traffic">
+    <traffic></traffic>
+  </div>
+  <div class="news">
+    <news></news>
+  </div>
+</div>
