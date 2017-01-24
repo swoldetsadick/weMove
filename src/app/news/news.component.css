@@ -1,9 +1,20 @@
-.logos-container{
+table
+{
+  align: center;
+  valign: center;
+}
+.logos-container
+{
    width: 10%;
-   height: 100%;
    float: left;
 }
-.logos {
-  display: none;
+.full-width
+{
   width: 100%;
+}
+.no-marg-or-pad
+{
+  height: 100%;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
 }

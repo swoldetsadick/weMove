@@ -5,17 +5,25 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MeteoComponent } from './meteo/meteo.component';
-import { NewsComponent } from './news/news.component';
+
 import { TrafficComponent } from './traffic/traffic.component';
 import { TransitComponent } from './transit/transit.component';
+
+import { NewsComponent } from './news/news.component';
+import {LogosComponent} from './news/logos/logos.component';
 
 @NgModule({
   declarations: [
       AppComponent,
+      
       MeteoComponent,
-      NewsComponent,
+
       TrafficComponent,
-      TransitComponent
+
+      TransitComponent,
+
+      NewsComponent,
+      LogosComponent
   ],
   imports: [
     BrowserModule,
@@ -25,11 +33,7 @@ import { TransitComponent } from './transit/transit.component';
   providers: [
   ],
   bootstrap: [
-      AppComponent,
-      MeteoComponent,
-      NewsComponent,
-      TrafficComponent,
-      TransitComponent
+      AppComponent
   ]
 })
 export class AppModule { }
