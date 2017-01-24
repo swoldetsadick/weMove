@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {LogosComponent} from './logos/logos.component';
+import { LogosComponent } from './logos/logos.component';
+import { FeedComponent } from './feed/feed.component';
 
 @Component({
   selector: 'news',

@@ -1,7 +1,6 @@
-table
+.vcentered
 {
-  align: center;
-  valign: center;
+  vertical-align: middle;
 }
 .logos-container
 {
@@ -17,4 +16,11 @@ table
   height: 100%;
   margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
+}
+.feeds-container
+{
+   width: 90%;
+   float: left;
+   background-color: blue;
+   text-align: right;
 }

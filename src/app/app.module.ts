@@ -4,18 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+
 import { MeteoComponent } from './meteo/meteo.component';
 
 import { TrafficComponent } from './traffic/traffic.component';
+
 import { TransitComponent } from './transit/transit.component';
 
 import { NewsComponent } from './news/news.component';
-import {LogosComponent} from './news/logos/logos.component';
+import { LogosComponent } from './news/logos/logos.component';
+import { FeedComponent } from './news/feed/feed.component';
 
 @NgModule({
   declarations: [
       AppComponent,
-      
+
       MeteoComponent,
 
       TrafficComponent,
@@ -23,7 +26,8 @@ import {LogosComponent} from './news/logos/logos.component';
       TransitComponent,
 
       NewsComponent,
-      LogosComponent
+      LogosComponent,
+      FeedComponent
   ],
   imports: [
     BrowserModule,
