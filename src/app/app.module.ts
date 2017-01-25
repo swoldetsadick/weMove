@@ -14,6 +14,7 @@ import { TransitComponent } from './transit/transit.component';
 import { NewsComponent } from './news/news.component';
 import { LogosComponent } from './news/logos/logos.component';
 import { FeedComponent } from './news/feed/feed.component';
+import { NewsDataService } from './news/feed/feed-data.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FeedComponent } from './news/feed/feed.component';
     HttpModule
   ],
   providers: [
+    NewsDataService
   ],
   bootstrap: [
       AppComponent
