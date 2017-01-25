@@ -6,6 +6,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 23-01-2017: NewsComponent Build
 
+24-01-2017: feedComponent Build
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
