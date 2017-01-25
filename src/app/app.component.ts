@@ -7,17 +7,17 @@ import { Component} from '@angular/core';
 })
 
 export class AppComponent {
-    width: number = 250;
-    height: number = 250;
+    //width: number = 250;
+    //height: number = 250;
 
     ngOnInit() {
-        this.width = window.innerWidth;
-        this.height = window.innerHeight;
+        //this.width = window.innerWidth;
+        //this.height = window.innerHeight;
     }
 
     onResize(event) {
-      this.width = event.target.innerWidth;
-      this.height = event.target.innerHeight;
+      //this.width = event.target.innerWidth;
+      //this.height = event.target.innerHeight;
       location.reload();
     }
 }
