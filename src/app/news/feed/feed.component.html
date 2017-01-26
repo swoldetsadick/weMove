@@ -1,5 +1,5 @@
-<ul>
-	<li class="card" *ngFor="let newsfeed of newsfeeds">
-    <p>{{newsfeed.title}}</p>
-  </li>
-<ul>
+<button (click)="changeChannel()">Click</button> {{newsType}} <b> &copy; Reuters </b>
+
+<li class="card" *ngFor="let newsfeed of newsfeeds">
+    {{newsfeed.title}}
+</li>

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Request, RequestOptions, RequestMethod } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
+import {Observable} from 'rxjs/Observable';
 
 import { NewsFeed } from './newsFeed';
 
 @Injectable()
 export class NewsDataService {
-  constructor(public http: Http) {}
-  newsType: string = 'worldNews';
-  site: string = 'http://feeds.reuters.com/Reuters/' + this.newsType;
-  url: string = 'https://api.rss2json.com/v1/api.json?rss_url=' + this.site;
+  constructor(private http: Http) {}
 
-  getNewsFeeds(){
-    return this.http.get(this.url).map(response => <NewsFeed[]>response.json().items);
+  getNewsFeeds(newsType: string){
+    let site: string = 'http://feeds.reuters.com/Reuters/' + newsType;
+    let url: string = 'https://api.rss2json.com/v1/api.json?rss_url=' + site;
+    // Service is refreshed every 10 minutes
+    return Observable.timer(0, 600000).flatMap(() => { return this.http.get(url).map(response => <NewsFeed[]>response.json().items)});
 	}
-
 }
 
 //Arts	http://feeds.reuters.com/news/artsculture
@@ -38,5 +38,5 @@ export class NewsDataService {
 //Top News	http://feeds.reuters.com/reuters/topNews
 //US News	http://feeds.reuters.com/Reuters/domesticNews
 //World	http://feeds.reuters.com/Reuters/worldNews
-
-//refresh service, change channel, input to get newsType from parent
+// Integrate annyang then command are col1 and col2 parameter to annyang
+// First do the news banner and the table

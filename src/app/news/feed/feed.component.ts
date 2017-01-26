@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { NewsDataService } from './feed-data.service';
 import { NewsFeed } from './newsFeed';
 
@@ -13,9 +13,25 @@ export class FeedComponent {
 
   constructor(private newsDataService: NewsDataService){}
 
+  newsType: string;
+
+
   ngOnInit(){
-    this.newsDataService.getNewsFeeds().subscribe(data => this.newsfeeds = data);
+    this.newsType = 'worldNews';
+    this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
   }
 
-  ngOnchange(){}
+  changeChannel()//pass parameter in annyang
+  {
+    if(this.newsType === 'technologyNews')
+    {
+      this.newsType = 'worldNews';
+      this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
+    }
+    else
+    {
+      this.newsType = 'technologyNews';
+      this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
+    }
+  }
 }
