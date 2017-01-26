@@ -10,6 +10,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 26-01-2017: News feed service completed / started on channel change
 
+27-01-2017: channel change & news service auto-refresh every 10 minutes
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
