@@ -23,3 +23,8 @@
    float: left;
    text-align: right;
 }
+.dog
+{
+  position: relative;
+  height: 100;
+}

@@ -28,12 +28,6 @@
     width: 10%;/**/
     height: 100%;
 }
-.carousel img
-{
-    max-width: 190px;
-    max-height: 80px;
-    width: 100%;
-}
 
 @keyframes carousel1/**/
 {
