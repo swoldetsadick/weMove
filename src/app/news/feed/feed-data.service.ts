@@ -19,4 +19,3 @@ export class NewsDataService {
 }
 
 // Integrate annyang then command are col1 and col2 parameter to annyang
-// First do the news banner and the table

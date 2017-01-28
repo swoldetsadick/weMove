@@ -25,14 +25,16 @@ export class FeedComponent {
   newsfeeds: NewsFeed[];
   myWidth: number;
   newsType: string;
+  news: string;
 
   constructor(private newsDataService: NewsDataService){
 
   }
 
   ngOnInit(){
-    this.newsType = channels[Channels.Technology];
+    this.newsType = channels[Channels.Technology]; //
     this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
+    this.news = this.titlize(this.newsType);
   }
 
   ngAfterContentChecked() {
@@ -47,12 +49,23 @@ export class FeedComponent {
     {
       this.newsType = channels[Channels.Entertainment];
       this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
+      this.news = this.titlize(this.newsType);
     }
     else
     {
       this.newsType = channels[Channels.Technology];
       this.newsDataService.getNewsFeeds(this.newsType).subscribe(data => {this.newsfeeds = data});
+      this.news = this.titlize(this.newsType);
     }
+  }
+
+  titlize(variable: string)
+  {
+    variable = variable.substring((variable.indexOf("/") + 1), variable.length);
+    if(variable.match("[A-Z]") != null){
+      variable = variable.replace(variable.match("[A-Z]")[0], " " + (variable.match("N")[0]));
+    }
+    return (variable.slice(0, 1).toUpperCase() + variable.substring(1, variable.length));
   }
 }
 

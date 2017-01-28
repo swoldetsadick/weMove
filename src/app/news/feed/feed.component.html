@@ -1,14 +1,8 @@
-<table class="no-marg-or-pad vcentered" [style.width]="myWidth + '%'">
-	<tr class="cut">
-
-			<td *ngFor="let newsfeed of newsfeeds;" class="card no-marg-or-pad cut">
-					{{newsfeed.description.substring(0,newsfeed.description.indexOf("<"))}}
-			</td>
-
-  </tr>
-	<tr>
-
-			<b> &copy; Reuters </b>
-
-	</tr>
-<table>
+  <div class="carousel">
+    <ul class="slides">
+      <li *ngFor="let newsfeed of newsfeeds;">
+        {{newsfeed.content.substring(0,newsfeed.description.indexOf("<"))}}
+      </li>
+    </ul>
+    <b> {{news}} &thinsp; - &thinsp; &copy; Reuters News &thinsp; &ensp; </b>
+  </div>
