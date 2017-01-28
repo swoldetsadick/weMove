@@ -1,5 +1,14 @@
-<button (click)="changeChannel()">Click</button> {{newsType}} <b> &copy; Reuters </b>
+<table class="no-marg-or-pad vcentered" [style.width]="myWidth + '%'">
+	<tr class="cut">
 
-<li class="card" *ngFor="let newsfeed of newsfeeds">
-    {{newsfeed.title}}
-</li>
+			<td *ngFor="let newsfeed of newsfeeds;" class="card no-marg-or-pad cut">
+					{{newsfeed.description.substring(0,newsfeed.description.indexOf("<"))}}
+			</td>
+
+  </tr>
+	<tr>
+
+			<b> &copy; Reuters </b>
+
+	</tr>
+<table>

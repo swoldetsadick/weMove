@@ -1,1 +1,32 @@
-
+.vcentered
+{
+  vertical-align: middle;
+}
+.no-marg-or-pad
+{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
+.card
+{
+    position: relative;
+    float: left;
+    text-align: left;
+    width: 10%;
+    white-space: nowrap;
+}
+ul
+{
+  list-style-type: none;
+}
+li
+{
+  display: inline;
+}
+table
+{
+  height: 100%;
+}
+.cut{
+  height: 80%;
+}
