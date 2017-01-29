@@ -19,4 +19,9 @@ export class TransitComponent {
     this.mvvDataService.getMVVSchdedules().subscribe(data => {console.log(
       data.text());});
   }
+
+  treatResponse(data: string){
+    //data.
+    return "done"
+  }
 }
