@@ -15,6 +15,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 28-01-2017: channel change to be implemented in annyang / NewsComponent finished
 
 28-01-2017: transit component started
+
+31-01-2017: transit component service finished
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
