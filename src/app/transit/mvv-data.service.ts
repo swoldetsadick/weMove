@@ -4,8 +4,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
-import { Schedule } from './schedule';
-
 @Injectable()
 
 export class MVVDataService {
@@ -21,7 +19,6 @@ export class MVVDataService {
     // Service is refreshed every 1 minute
     return Observable.timer(0, 60000).flatMap(() => { return this.http.get(url)
       .map(response => this.treatResponse(response.text()))});
-    //<Schedule[]>response.json().items
 	}
 
   treatResponse(data: string){
@@ -74,7 +71,7 @@ export class MVVDataService {
     }
 
     return order;
-    
+
   }
 
 }

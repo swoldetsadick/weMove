@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { MVVDataService } from './mvv-data.service';
-import { Schedule } from './schedule';
 
 @Component({
   selector: 'transit',
