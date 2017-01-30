@@ -73,21 +73,8 @@ export class MVVDataService {
       order.push(intermed);
     }
 
-    var jsonObj = {};
-    for(let ord in order) {
-      let tit = "id" + ord;
-      jsonObj[ord] = {line:"", direction:"", waittime:""};
-      for(var _i = 0; _i < 3; _i++) {
-        if(_i == 0) {
-          jsonObj[ord].line = order[ord][_i];
-        } else if(_i == 1) {
-          jsonObj[ord].direction = order[ord][_i];
-        } else {
-          jsonObj[ord].waittime = order[ord][_i];
-        }
-      }
-    }
     return order;
+    
   }
 
 }
