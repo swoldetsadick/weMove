@@ -19,8 +19,75 @@ export class MVVDataService {
     let headers      = new Headers({ 'Content-Type': 'text/html' }); // ... Set content type to JSON
     let options       = new RequestOptions({ headers: headers });
     // Service is refreshed every 1 minute
-    return Observable.timer(0, 60000).flatMap(() => { return this.http.get(url).map(response => response)});
+    return Observable.timer(0, 60000).flatMap(() => { return this.http.get(url)
+      .map(response => this.treatResponse(response.text()))});
     //<Schedule[]>response.json().items
 	}
+
+  treatResponse(data: string){
+
+    let start_index = data.match("<table class=\"departureTable departureView\">").index;
+    let end_index = data.match("<table class=\"departureTable footerTable\">").index;
+    data = data.substring(start_index, end_index);
+    let drives: Array<String> = [];
+
+    let idaho = data.split("</tr>", 100);
+    for(var _i = 0; _i < 100; _i++) {
+      if(idaho[_i] != undefined) {
+        drives.push(idaho[_i]);
+      } else {
+        break;
+      }
+    }
+
+    drives = drives.slice(1, (drives.length - 2));
+    let order: Array<Array<String>> = [];
+
+    for(let drive in drives) {
+      let intermed: Array<string> = [];
+      for(var _i = 0; _i < 3; _i++) {
+        if(_i == 0) {
+          let root = drives[drive].split("</td>", 3)[_i];
+          let s = root.length;
+          let e = root.match("mn\">").index + 4;
+          intermed.push(root.substring(s, e));
+        } else if(_i == 1) {
+          let root = drives[drive].split("</td>", 3)[_i];
+          let e = root.match("<span").index
+          root = root.substring(0, e);
+          let s = root.length;
+          let d = root.match(">").index + 1
+          let c = root.substring(d, s).replace("\n", "").replace("\n", "");
+          let x: any;
+          while(x != -1) {
+            c = c.replace("\t", "");
+            x = c.search("\t");
+          }
+          intermed.push(c);
+        } else {
+          let root = drives[drive].split("</td>", 3)[_i];
+          let e = root.match(">").index + 1;
+          intermed.push(root.substring(e, root.length).toString());
+        }
+      }
+      order.push(intermed);
+    }
+
+    var jsonObj = {};
+    for(let ord in order) {
+      let tit = "id" + ord;
+      jsonObj[ord] = {line:"", direction:"", waittime:""};
+      for(var _i = 0; _i < 3; _i++) {
+        if(_i == 0) {
+          jsonObj[ord].line = order[ord][_i];
+        } else if(_i == 1) {
+          jsonObj[ord].direction = order[ord][_i];
+        } else {
+          jsonObj[ord].waittime = order[ord][_i];
+        }
+      }
+    }
+    return order;
+  }
 
 }

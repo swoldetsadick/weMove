@@ -7,8 +7,10 @@
                 <img src="/assets/images/u2.png" />
             </div>
             <div class="bodier">
-                <li>
-                    {{title}}
+                <li  *ngFor="let schedule of schedules;">
+                    {{schedule[0]}}
+                    {{schedule[1]}}
+                    {{schedule[2]}}
                 </li>
             </div>
         </div>

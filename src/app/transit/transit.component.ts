@@ -10,18 +10,14 @@ import { Schedule } from './schedule';
 })
 export class TransitComponent {
   title: string = 'app works!';
-
+  schedules: Array<Array<String>> = [];
+  //Schedule[];
   constructor(private mvvDataService: MVVDataService){
 
   }
 
   ngOnInit(){
-    this.mvvDataService.getMVVSchdedules().subscribe(data => {console.log(
-      data.text());});
+    this.mvvDataService.getMVVSchdedules().subscribe(data => {this.schedules = data});
   }
 
-  treatResponse(data: string){
-    //data.
-    return "done"
-  }
 }
