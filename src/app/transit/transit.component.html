@@ -7,11 +7,11 @@
                 <img src="/assets/images/u2.png" />
             </div>
             <div class="bodier">
-                <li  *ngFor="let schedule of schedules;">
-                    {{schedule[0]}}
-                    {{schedule[1]}}
-                    {{schedule[2]}}
-                </li>
+                <div  *ngFor="let schedule of schedules;">
+                  <div *ngIf="schedule[0] == 'U2';">
+                    <b>{{schedule[1]}}</b>:  <i> {{schedule[2]}} mins &nbsp;</i><br/>
+                  </div>
+                </div>
             </div>
         </div>
 
@@ -20,20 +20,11 @@
               <img src="/assets/images/bus177.png" />
           </div>
           <div class="bodier">
-              <li>
-                  {{title}}
-              </li>
-          </div>
-        </div>
-
-        <div class="w-thirder" >
-          <div class="titler">
-              <img src="/assets/images/pendel.png" />
-          </div>
-          <div class="bodier">
-              <li>
-                  {{title}}
-              </li>
+            <div  *ngFor="let schedule of schedules;">
+              <div *ngIf="schedule[0] == '177';">
+                <b>{{schedule[1]}}</b>:  <i> {{schedule[2]}} mins &nbsp;</i><br/>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -46,9 +37,11 @@
               <img src="/assets/images/bus50.png" />
           </div>
           <div class="bodier">
-              <li>
-                  {{title}}
-              </li>
+            <div  *ngFor="let schedule of schedules;">
+              <div *ngIf="schedule[0] == '50';">
+                <b>{{schedule[1]}}</b>:  <i> {{schedule[2]}} mins &nbsp;</i><br/>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -57,14 +50,12 @@
               <img src="/assets/images/bus178.png" />
           </div>
           <div class="bodier">
-              <li>
-                  {{title}}
-              </li>
+            <div  *ngFor="let schedule of schedules;">
+              <div *ngIf="schedule[0] == '178';">
+                <b>{{schedule[1]}}</b>:  <i> {{schedule[2]}} mins &nbsp;</i><br/>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="w-thirder" >
-            {{title}}
         </div>
 
     </div>

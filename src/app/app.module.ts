@@ -11,7 +11,7 @@ import { TrafficComponent } from './traffic/traffic.component';
 
 import { TransitComponent } from './transit/transit.component';
 import { MVVDataService } from './transit/mvv-data.service';
-import { PendelDataService } from './transit/pendel-data.service';
+//import { PendelDataService } from './transit/pendel-data.service';
 
 import { NewsComponent } from './news/news.component';
 import { LogosComponent } from './news/logos/logos.component';
@@ -40,7 +40,7 @@ import { NewsDataService } from './news/feed/feed-data.service';
   providers: [
     NewsDataService,
     MVVDataService,
-    PendelDataService
+    //PendelDataService
   ],
   bootstrap: [
       AppComponent

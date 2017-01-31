@@ -1,19 +1,19 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
+//import { Injectable } from '@angular/core';
+//import { Http } from '@angular/http';
+//import 'rxjs/add/operator/map';
+///import 'rxjs/Rx';
+//import { Observable } from 'rxjs/Observable';
 
-@Injectable()
+//@Injectable()
 
-export class PendelDataService {
+//export class PendelDataService {
 
-  constructor(private http: Http) {}
+  //constructor(private http: Http) {}
 
-  getPendelSchdedules(){
-    let url: string = "";
+  //getPendelSchdedules(){
+    //let url: string = "";
     // Service is refreshed every 1 minute
     // return Observable.timer(0, 6000).flatMap(() => { return this.http.get(url).map(response => <Schedule[]>response.json().items)});
-	}
+	//}
 
-}
+//}
