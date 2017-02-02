@@ -28,7 +28,16 @@ img
 {
   width: 100%;
 }
-i
+td
 {
-  float: right;
+  text-align: left;
+  vertical-align: bottom;
+}
+.time
+{
+  text-align: right;
+}
+table
+{
+  vertical-align: bottom;
 }
